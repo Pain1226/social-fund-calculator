@@ -1,0 +1,83 @@
+<view class="container">
+  <!-- 总览 -->
+  <view class="summary-card">
+    <view class="summary-title">月度差额总计</view>
+    <view class="summary-amount">{{result.summary.diffTotal}}元</view>
+    <view class="summary-detail">
+      <text>公司少缴: {{result.summary.diffCompany}}元</text>
+      <text>个人少缴: {{result.summary.diffPersonal}}元</text>
+    </view>
+    <view class="yearly">年度差额: {{result.summary.yearlyDiff}}元</view>
+  </view>
+  
+  <!-- 输入信息 -->
+  <view class="section">
+    <view class="section-title">计算参数</view>
+    <view class="info-row">
+      <text>实际工资</text>
+      <text>{{input.actualSalary}}元</text>
+    </view>
+    <view class="info-row">
+      <text>缴纳基数</text>
+      <text>{{input.baseSalary}}元</text>
+    </view>
+    <view class="info-row">
+      <text>城市</text>
+      <text>{{input.city}}</text>
+    </view>
+    <view class="info-row">
+      <text>公积金比例</text>
+      <text>{{input.fundRate}}%</text>
+    </view>
+  </view>
+  
+  <!-- 社保明细 -->
+  <view class="section">
+    <view class="section-title">社保差额明细</view>
+    <view class="detail-table">
+      <view class="detail-header">
+        <text>险种</text>
+        <text>应缴</text>
+        <text>实缴</text>
+        <text>差额</text>
+      </view>
+      <view class="detail-row" wx:for="{{result.social.details}}" wx:key="name">
+        <text>{{item.name}}</text>
+        <text>{{item.actualCompany}}</text>
+        <text>{{item.companyCompany}}</text>
+        <text class="diff">{{item.diffCompany}}</text>
+      </view>
+    </view>
+    <view class="detail-total">
+      社保差额小计: {{result.social.diffTotal}}元
+    </view>
+  </view>
+  
+  <!-- 公积金明细 -->
+  <view class="section">
+    <view class="section-title">公积金差额明细</view>
+    <view class="detail-table">
+      <view class="detail-header">
+        <text></text>
+        <text>应缴</text>
+        <text>实缴</text>
+        <text>差额</text>
+      </view>
+      <view class="detail-row">
+        <text>公积金</text>
+        <text>{{result.fund.actualCompany}}</text>
+        <text>{{result.fund.companyCompany}}</text>
+        <text class="diff">{{result.fund.diffCompany}}</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 操作按钮 -->
+  <button class="btn-primary" bindtap="saveToHistory">保存到历史</button>
+  <button class="btn-secondary" bindtap="goBack">返回修改</button>
+  
+  <!-- 免责声明 -->
+  <view class="disclaimer">
+    ⚠️ 以上结果仅供参考，不构成法律建议。
+  </view>
+</view>

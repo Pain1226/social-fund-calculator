@@ -1,0 +1,83 @@
+.empty {
+  text-align: center;
+  padding: 60rpx 0;
+  color: #999;
+}
+
+.history-item {
+  background: #f9f9f9;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}
+
+.history-city {
+  font-weight: bold;
+  color: #333;
+}
+
+.history-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.history-body {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.history-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.history-result {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10rpx;
+  border-top: 1rpx solid #eee;
+}
+
+.highlight {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.history-actions {
+  text-align: right;
+  margin-top: 16rpx;
+}
+
+.action-delete {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #4A90D9;
+  border: 2rpx solid #4A90D9;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  text-align: center;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+
+.btn-danger {
+  background: #fff;
+  color: #e74c3c;
+  border: 2rpx solid #e74c3c;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  text-align: center;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+}

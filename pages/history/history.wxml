@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="section">
+    <view class="section-title">历史记录</view>
+    
+    <view wx:if="{{history.length === 0}}" class="empty">
+      暂无历史记录
+    </view>
+    
+    <view wx:else>
+      <view class="history-item" wx:for="{{history}}" wx:key="id">
+        <view class="history-header">
+          <text class="history-city">{{item.city}}</text>
+          <text class="history-time">{{item.createTime}}</text>
+        </view>
+        <view class="history-body">
+          <view class="history-row">
+            <text>实际工资: {{item.actualSalary}}元</text>
+            <text>缴纳基数: {{item.baseSalary}}元</text>
+          </view>
+          <view class="history-result">
+            月差额: <text class="highlight">{{item.diffTotal}}元</text>
+            年差额: <text class="highlight">{{item.yearlyDiff}}元</text>
+          </view>
+        </view>
+        <view class="history-actions">
+          <text class="action-delete" bindtap="deleteItem" data-id="{{item.id}}">删除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <button wx:if="{{history.length > 0}}" class="btn-danger" bindtap="clearAll">清空全部记录</button>
+  
+  <button class="btn-secondary" bindtap="goBack">返回首页</button>
+</view>

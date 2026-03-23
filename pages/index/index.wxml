@@ -1,0 +1,52 @@
+<view class="container">
+  <!-- 输入区域 -->
+  <view class="section">
+    <view class="section-title">基本信息</view>
+    
+    <view class="input-row">
+      <text class="input-label">实际工资</text>
+      <input class="input-field" type="digit" placeholder="请输入实际工资" value="{{actualSalary}}" bindinput="onActualSalaryInput" />
+    </view>
+    
+    <view class="input-row">
+      <text class="input-label">缴纳基数</text>
+      <input class="input-field" type="digit" placeholder="请输入公司缴纳基数" value="{{baseSalary}}" bindinput="onBaseSalaryInput" />
+    </view>
+    
+    <view class="input-row">
+      <text class="input-label">城市</text>
+      <picker mode="selector" range="{{cities}}" value="{{cityIndex}}" bindchange="onCityChange">
+        <view class="picker-field">
+          <text>{{cities[cityIndex]}}</text>
+          <text class="arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+  </view>
+  
+  <!-- 比例设置 -->
+  <view class="section">
+    <view class="section-title">公积金比例</view>
+    <view class="input-row">
+      <text class="input-label">比例(%)</text>
+      <picker mode="selector" range="{{fundRates}}" value="{{fundRateIndex}}" bindchange="onFundRateChange">
+        <view class="picker-field">
+          <text>{{fundRates[fundRateIndex]}}%</text>
+          <text class="arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+    <text class="hint">公积金比例根据单位不同，一般为5%-12%</text>
+  </view>
+  
+  <!-- 计算按钮 -->
+  <button class="btn-primary" bindtap="calculate">计算差额</button>
+  
+  <!-- 历史记录入口 -->
+  <button class="btn-secondary" bindtap="goHistory">查看历史记录</button>
+  
+  <!-- 免责声明 -->
+  <view class="disclaimer">
+    ⚠️ 免责声明：本计算结果仅供参考，实际缴纳金额以当地社保局/公积金中心核定为准。不同单位、不同情况可能存在差异，请以实际情况为准。
+  </view>
+</view>
