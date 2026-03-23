@@ -1,0 +1,22 @@
+{
+  "name": "social-fund-calculator",
+  "version": "1.0.0",
+  "description": "社保公积金差额计算器",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/test/**/*.test.js"
+    ],
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "utils/**/*.js"
+    ]
+  }
+}
